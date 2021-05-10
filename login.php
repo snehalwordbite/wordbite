@@ -31,7 +31,7 @@
                     <input type="password" class="form-control" name="password" id="exampleInputPassword1" required>
                   </div>
                   <small id="loginHelpBlock" class="form-text text-muted">
-                    <label for="SignUpAccount">Don't have a account? <a href="./signup.html" class="btn-link my-2">Sign UP</a></label>
+                    <label for="SignUpAccount">Don't have a account? <a href="./signup.php" class="btn-link my-2">Sign UP</a></label>
                   </small>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

@@ -29,7 +29,7 @@ if($action=='redirectToLogin'){
             $conn->exec($query);
             $message = "registration success!";
             echo"New Record added successfully";
-            include('./login.html');
+            include('./login.php');
         }catch(PDOException $e){
             echo $e->getMessage();
         }

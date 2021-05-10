@@ -65,7 +65,7 @@
                           </div>
                         </div>
                         <small id="loginHelpBlock" class="form-text text-muted">
-                            <label for="loginAccount">Have a account? <a href="./login.html" class="btn-link my-2">Login</a></label>
+                            <label for="loginAccount">Have a account? <a href="./login.php" class="btn-link my-2">Login</a></label>
                         </small>
                         <button type="submit" class="btn btn-primary">Sign in</button>
                       </form>
