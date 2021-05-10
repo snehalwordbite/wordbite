@@ -11,7 +11,7 @@
     
     <div class="container-fluid">
 
-        <div class="d-flex justify-content-center mt-5">
+        <div class="d-flex justify-content-center mt-5 pb-3">
             <div class="card text-center">
                 <div class="card-header">
                   SignUp
@@ -65,7 +65,7 @@
                           </div>
                         </div>
                         <small id="loginHelpBlock" class="form-text text-muted">
-                            <label for="loginAccount">Have a account? <a href="./login.php" class="btn-link my-2">Login</a></label>
+                            <label for="loginAccount">Have an account? <a href="./login.php" class="btn-link my-2">Log In</a></label>
                         </small>
                         <button type="submit" class="btn btn-primary">Sign in</button>
                       </form>
