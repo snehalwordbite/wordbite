@@ -6,12 +6,25 @@ if(isset($_POST['action'])){
     $action = $_POST['action'];
 }else if(isset($_GET['action'])){
     $action = $_POST['action'];
-}else{
+}else if(isset($_GET['logout'])){
+    session_start();
+    unset($_SESSION['loggedIn']);
+    unset($_SESSION['username']);
+    session_destroy();
+    header("Location:./index.php");
+    exit;
+}
+else{
     $action = 'home';
 }
 
 if($action=='home'){
-    header("Location:./home.php");
+    session_start();
+    if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
+        header("Location:./profile.php");
+    }else{
+        header("Location:./home.php");
+    }
 }else if($action=='signup'){
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
@@ -44,11 +57,15 @@ if($action=='home'){
     try{
         $rs = $conn->query($query);
         $count = $rs->rowCount();
-        echo $count;
-        if($count>0){
-            echo 'success';
+        // echo $count;
+        if($count==1){
+            session_start();
+            $_SESSION['loggedIn'] = true;
+            $_SESSION['username'] = $username;
+            header("Location:./profile.php");
         }else{
-            echo "failure";
+            $message = "No such user exits!";
+            include('./login.php');
         }
 
     }catch(Exception $e){

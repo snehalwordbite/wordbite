@@ -1,8 +1,11 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>WordBite</title>
+  <title><?php
+    echo $_SESSION['username'];
+  ?></title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="./assets/img/logo.png">
@@ -14,12 +17,10 @@
    <div class="container-fluid">
 
    <?php
-    include_once('./components/header.php');
+    require('./components/header.php');
     ?>
    <div class="container">
-   <?php
-    include_once('./components/carosoul.php');
-    ?>
+    <p>This is user homepage</p>
    </div>
 
 

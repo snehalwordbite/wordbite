@@ -7,9 +7,9 @@ $password = "";
 try{
     $conn = new PDO("mysql:host=$servername;dbname=wrodbite",$username,$password);
     $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    echo "connected successfully";
+    // echo "connected successfully";
 }catch(PDOException $e){
-    echo "connection failed: ". $e->getMessage();
+    // echo "connection failed: ". $e->getMessage();
 }
 
 ?>
