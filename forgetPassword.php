@@ -12,7 +12,10 @@
 <body>
     
    <div class="container-fluid">
-    <!-- for login form -->
+   <?php
+    include_once('./header.php');
+   ?>
+    <!-- for forget form -->
     <div class="d-flex justify-content-center mt-3">
       
         <div class="card text-center mt-5">

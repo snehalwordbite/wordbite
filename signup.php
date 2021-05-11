@@ -12,7 +12,9 @@
 <body>
     
     <div class="container-fluid">
-
+        <?php
+          include_once('./header.php');
+        ?>
         <div class="d-flex justify-content-center mt-5 pb-3">
             <div class="card text-center">
                 <div class="card-header">
