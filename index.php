@@ -7,11 +7,11 @@ if(isset($_POST['action'])){
 }else if(isset($_GET['action'])){
     $action = $_POST['action'];
 }else{
-    $action = 'redirectToLogin';
+    $action = 'home';
 }
 
-if($action=='redirectToLogin'){
-    header("Location:./login.php");
+if($action=='home'){
+    header("Location:./home.php");
 }else if($action=='signup'){
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
