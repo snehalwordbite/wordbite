@@ -20,7 +20,7 @@
     require('./components/header.php');
     ?>
    <div class="container">
-    <p>This is user homepage</p>
+    <p>This is <?php echo $_SESSION['username'] ?> homepage</p>
    </div>
 
 
