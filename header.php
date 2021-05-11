@@ -31,7 +31,8 @@
         </form>
     </div>
     <div class="d-flex ml-auto flex-row justitfy-content-start">
-        <a href="./login.php" class="btn btn-outline-primary my-2 mr-2 my-sm-0">Login</a>
+        <a href="./login.php" class="btn btn-outline-primary my-2 mr-2 my-sm-0">LogIn</a>
+        <a href="./login.php" class="btn btn-outline-info my-2 mr-2 my-sm-0">SignUp</a>
         <a href="#" class="btn btn-outline-warning my-2 my-sm-0">LogOut</a>
     </div>
   </div>
