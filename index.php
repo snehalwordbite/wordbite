@@ -54,7 +54,8 @@ if($action=='redirectToLogin'){
     }catch(Exception $e){
         echo $e->getMessage();
     }
-
+}elseif($action=='resetPassword'){
+    //code to be given by snehal
 }
 
 
