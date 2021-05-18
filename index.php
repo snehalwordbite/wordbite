@@ -40,12 +40,12 @@ if($action=='redirectToLogin'){
 }else if($action=='login'){
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $query = "select * from users where email='$username' and password='$password'";
+    $query = "SELECT * FROM wb_customers_details WHERE email='$username' and password='$password'";
     
     try{
         $rs = $conn->query($query);
         $count = $rs->rowCount();
-        echo $count;
+        // echo $count;
         if($count>0){
             echo 'success';
         }else{
@@ -56,7 +56,7 @@ if($action=='redirectToLogin'){
         echo $e->getMessage();
     }
 
-}
+}\
 
 
 ?>

@@ -5,9 +5,9 @@ $username = "root";
 $password = "";
 
 try{
-    $conn = new PDO("mysql:host=$servername;dbname=wrodbite_wordbite",$username,$password);
+    $conn = new PDO("mysql:host=$servername;dbname=wordbite_wordbite",$username,$password);
     $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    echo "connected successfully";
+    // echo "connected successfully";
 }catch(PDOException $e){
     echo "connection failed: ". $e->getMessage();
 }
