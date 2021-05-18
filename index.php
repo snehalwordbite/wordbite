@@ -1,30 +1,18 @@
 <?php
 
-require('./src/dbConnect/connect.php');
+require('./db/connect.php');
+require('./src/register.php');
 
 if(isset($_POST['action'])){
     $action = $_POST['action'];
 }else if(isset($_GET['action'])){
     $action = $_POST['action'];
-}else if(isset($_GET['logout'])){
-    session_start();
-    unset($_SESSION['loggedIn']);
-    unset($_SESSION['username']);
-    session_destroy();
-    header("Location:./index.php");
-    exit;
-}
-else{
-    $action = 'home';
+}else{
+    $action = 'redirectToLogin';
 }
 
-if($action=='home'){
-    session_start();
-    if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
-        header("Location:./profile.php");
-    }else{
-        header("Location:./home.php");
-    }
+if($action=='redirectToLogin'){
+    header("Location:./modules/login.php");
 }else if($action=='signup'){
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
@@ -42,7 +30,7 @@ if($action=='home'){
             $conn->exec($query);
             $message = "registration success!";
             echo"New Record added successfully";
-            include('./login.php');
+            include('./modules/login.php');
         }catch(PDOException $e){
             echo $e->getMessage();
         }
@@ -57,22 +45,17 @@ if($action=='home'){
     try{
         $rs = $conn->query($query);
         $count = $rs->rowCount();
-        // echo $count;
-        if($count==1){
-            session_start();
-            $_SESSION['loggedIn'] = true;
-            $_SESSION['username'] = $username;
-            header("Location:./profile.php");
+        echo $count;
+        if($count>0){
+            echo 'success';
         }else{
-            $message = "No such user exits!";
-            include('./login.php');
+            echo "failure";
         }
 
     }catch(Exception $e){
         echo $e->getMessage();
     }
-}elseif($action=='resetPassword'){
-    //code to be given by snehal
+
 }
 
 
