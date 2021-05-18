@@ -1,8 +1,8 @@
 <?php
 
-include('./db/connect.php');
-include("./src/loginPageFunctions.php");
-include('./src/registerPageFunctions.php');
+require_once("D:\Projects Made\Wrodbite Internship\wordbite\db\connect.php");
+require_once("./src/loginPageFunctions.php");
+require_once('./src/registerPageFunctions.php');
 
 if(isset($_POST['action'])){
     $action = $_POST['action'];
@@ -24,7 +24,7 @@ if($action=='redirectToLogin'){
     $gender = $_POST["gender"];
     $mobileNumber = $_POST["mobile"];
     if(checkPassword($password1,$password2)){
-        registerUser($email,$firstName,$lastName,$password,$dateOfBirth,$gender,$mobileNumber);
+        registerUser($email,$firstName,$lastName,$password1,$dateOfBirth,$gender,$mobileNumber);
     }else{
         echo '<script>alert("password missmatch error!")</script>';
     }
