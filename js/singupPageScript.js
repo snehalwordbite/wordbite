@@ -1,6 +1,11 @@
 // singupPageScript.js
+
+window.onload = ()=>{
+    document.getElementById('signupBtn').disabled=true;
+}
+
 var getData = async (userValue) => {
-    let resp = await axios.get('../src/register.php?username='+userValue);
+    let resp = await axios.get('../src/registerPageFunctions.php?username='+userValue);
     if(resp.data==='true'){
         let emailSpan = document.getElementById('inputEmailSpan');
         emailSpan.style.color = 'red';
@@ -26,9 +31,11 @@ password2.addEventListener('blur',()=>{
         var passSpan = document.getElementById('passwordSpan');
         passSpan.style.color='green';
         passSpan.innerText = 'Password Matched!';
+        document.getElementById('signupBtn').disabled=false;
     }else{
         var passSpan = document.getElementById('passwordSpan');
         passSpan.style.color='red';
         passSpan.innerText = 'Password not matching!';
+        document.getElementById('signupBtn').disabled=true;
     }
 })

@@ -1,7 +1,8 @@
 <?php
 
-require('./db/connect.php');
-require('./src/register.php');
+include('./db/connect.php');
+include("./src/loginPageFunctions.php");
+include('./src/registerPageFunctions.php');
 
 if(isset($_POST['action'])){
     $action = $_POST['action'];
@@ -19,44 +20,32 @@ if($action=='redirectToLogin'){
     $email = $_POST["email"];
     $password1 = $_POST["password1"];
     $password2 = $_POST["password2"];
-    $address1 = $_POST["address1"];
-    $address2 = $_POST["address2"];
-    $city = $_POST["city"];
-    $state = $_POST["state"];
-    $zip = $_POST["zip"];
+    $dateOfBirth = $_POST["DOB"];
+    $gender = $_POST["gender"];
+    $mobileNumber = $_POST["mobile"];
     if(checkPassword($password1,$password2)){
-        $query = "insert into users(firstName,lastName,email,password,address,address2,city,state,zip) values('$firstName','$lastName','$email','$password1','$address1','$address2','$city','$state','$zip')";
-        try{
-            $conn->exec($query);
-            $message = "registration success!";
-            echo"New Record added successfully";
-            include('./modules/login.php');
-        }catch(PDOException $e){
-            echo $e->getMessage();
-        }
+        registerUser($email,$firstName,$lastName,$password,$dateOfBirth,$gender,$mobileNumber);
     }else{
-        echo "Error Occured!";
+        echo '<script>alert("password missmatch error!")</script>';
     }
 }else if($action=='login'){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $query = "SELECT * FROM wb_customers_details WHERE email='$username' and password='$password'";
     
-    try{
-        $rs = $conn->query($query);
-        $count = $rs->rowCount();
-        // echo $count;
-        if($count>0){
-            echo 'success';
+    if(empty($_POST['username']) && empty($_POST['password'])){
+        echo '<script>alert("username or password is empty");</script>';
+    }else{
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        
+        $result = loginUser($username,md5($password));
+        if($result){
+            session_start();
+            $_SESSION['username']=$username;
+            $_SESSION['isloggedIn']=true;
+            header("Location:./modules/profile.php");
         }else{
-            echo "failure";
+            echo '<script>alert("User not exists!");</script>';
         }
-
-    }catch(Exception $e){
-        echo $e->getMessage();
     }
-
-}\
-
+}
 
 ?>
