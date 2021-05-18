@@ -49,8 +49,8 @@
 <?php
       }else{
         ?>
-        <a href="./login.php" class="btn btn-outline-primary my-2 mr-2 my-sm-0">LogIn</a>
-        <a href="./signup.php" class="btn btn-outline-info my-2 mr-2 my-sm-0">SignUp</a>
+        <a href="../modules/login.php" class="btn btn-outline-primary my-2 mr-2 my-sm-0">LogIn</a>
+        <a href="../modules/signup.php" class="btn btn-outline-info my-2 mr-2 my-sm-0">SignUp</a>
       <?php
       }
     ?>

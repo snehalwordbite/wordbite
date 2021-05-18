@@ -8,12 +8,24 @@ if(isset($_POST['action'])){
     $action = $_POST['action'];
 }else if(isset($_GET['action'])){
     $action = $_POST['action'];
-}else{
-    $action = 'redirectToLogin';
+}else if(isset($_GET['logout'])){
+    session_start();
+    unset($_SESSION['isloggedIn']);
+    unset($_SESSION['username']);
+    session_destroy();
+    header("Location:./index.php");
+    exit;
+}else {
+    $action = 'home';
 }
 
-if($action=='redirectToLogin'){
-    header("Location:./modules/login.php");
+if($action=='home'){
+    session_start();
+    if(isset($_SESSION['isloggedIn']) && $_SESSION['isloggedIn']==true ){
+        header("Location:./modules/profile.php");
+    }else{
+        header("Location:./modules/home.php");
+    }
 }else if($action=='signup'){
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
