@@ -23,7 +23,7 @@
                 <input type="hidden" name="action" value="login">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
-                    <input type="email" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                    <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
                   </div>
                   <div class="form-group">

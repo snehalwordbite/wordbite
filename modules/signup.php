@@ -38,12 +38,16 @@
               <div class="form-group col-lg-6">
                 <label for="inputEmail">Email</label>
                 <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" required>
-                <span id="inputEmailSpan"></span>
               </div>
               <div class="form-group col-lg-6">
                 <label for="inputDOB">Date of Birth</label>
                 <input type="date" name="DOB" plcaeholder="dd/mm/yyyy" id="inputDOB" class="form-control">
               </div>
+            </div>
+            <div class="form-group">
+              <label for="inputUniqueName">Username</label>
+              <input type="text" name="uniqueName" id="inputUniqueName" class="form-control" placeholder="username" required>
+                <span id="inputUniqueNameSpan"></span>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">

@@ -35,8 +35,9 @@ if($action=='home'){
     $dateOfBirth = $_POST["DOB"];
     $gender = $_POST["gender"];
     $mobileNumber = $_POST["mobile"];
+    $uniqueName = $_POST["uniqueName"];
     if(checkPassword($password1,$password2)){
-        registerUser($email,$firstName,$lastName,$password1,$dateOfBirth,$gender,$mobileNumber);
+        registerUser($email,$firstName,$lastName,$password1,$dateOfBirth,$gender,$mobileNumber,$uniqueName);
     }else{
         echo '<script>alert("password missmatch error!")</script>';
     }

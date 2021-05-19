@@ -11,7 +11,7 @@ function checkPassword($password1, $password2){
 
 if(isset($_GET['username'])){
     $username = $_GET['username'];
-    $query = "SELECT * FROM wb_customers_details WHERE email='$username'";
+    $query = "SELECT * FROM wb_customers_details WHERE uniqueName='$username'";
     try{
         $conn = db();
         $rowCount = $conn->query($query)->rowCount();
@@ -26,14 +26,15 @@ if(isset($_GET['username'])){
 
 }
 
-function registerUser($email,$firstName,$lastName,$password,$dateOfBirth,$gender,$mobileNumber){
+function registerUser($email,$firstName,$lastName,$password,$dateOfBirth,$gender,$mobileNumber,$uniqueName){
     $saltPassword = md5($password);
-    $query = "INSERT INTO wb_customers(email,password,salt,role_id) VALUES('$email','$password','$saltPassword',0)";
+    $query = "INSERT INTO wb_customers(email,password,salt,role_id) VALUES('$uniqueName','$password','$saltPassword',0)";
     try{
         $conn = db();
         $conn->exec($query);
         $customer_id = $conn->lastInsertId();
-        $queryForCustomerDetails = "INSERT INTO wb_customers_details(fname,lname,email,birthdate,gender,customer_id,mobile,full_name,uniqueName) VALUES('$firstName','$lastName','$email','$dateOfBirth','$gender','$customer_id','$mobileNumber','$firstName+' '+$lastName','$email')";
+        echo $customer_id;
+        $queryForCustomerDetails = "INSERT INTO wb_customers_details(fname,lname,email,birthdate,gender,customer_id,mobile,full_name,uniqueName) VALUES('$firstName','$lastName','$email','$dateOfBirth','$gender','$customer_id','$mobileNumber','$firstName'+' $lastName','$uniqueName')";
         // adding data to wb_customer_details table
         $conn->exec($queryForCustomerDetails);
         echo '<script>alert("Registration Successful!");</script>';
