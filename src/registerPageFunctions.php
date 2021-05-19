@@ -37,9 +37,9 @@ function registerUser($email,$firstName,$lastName,$password,$dateOfBirth,$gender
         $queryForCustomerDetails = "INSERT INTO wb_customers_details(fname,lname,email,birthdate,gender,customer_id,mobile,full_name,uniqueName) VALUES('$firstName','$lastName','$email','$dateOfBirth','$gender','$customer_id','$mobileNumber','$firstName'+' $lastName','$uniqueName')";
         // adding data to wb_customer_details table
         $conn->exec($queryForCustomerDetails);
-        echo '<script>alert("Registration Successful!");</script>';
+        // echo '<script>alert("Registration Successful!");</script>';
         session_start();
-        $_SESSION['username'] = $username;
+        $_SESSION['username'] = $uniqueName;
         $_SESSION['isloggedIn'] = true;
         header("Location:../modules/profile.php");
     }catch(Exception $e){

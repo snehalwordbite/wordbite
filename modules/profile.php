@@ -12,15 +12,15 @@ session_start();
         echo $_SESSION['username'];
     } ?> Profile Page</title>
     <link rel="icon" type="image/png" href="../img/wordbite_logo.png">
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 
 <body>
-    <?php include_once "./header.php"; ?>
-    <?php if(isset($_SESSION['username'])){
-        echo $_SESSION['username'];
-    } ?> profile page
+    <div class="container-fluid">
+        <?php include_once "./header.php"; ?>
+        <?php include_once "./profileSidebar.php"; ?>
 
+    </div>
 
     <script src="../js/jquery-3.5.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
