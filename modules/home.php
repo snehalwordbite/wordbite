@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="./assets/img/logo.png">
     <!-- bootstrap css file -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 <body>
     
@@ -16,6 +17,8 @@
    <?php
     include_once('./header.php');
     include_once('./carosoul.php');
+    include_once "./booksDiv.php" ; 
+    include_once "./blogsDiv.php" ;
     ?>
    
 

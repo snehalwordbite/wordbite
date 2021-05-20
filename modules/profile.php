@@ -17,7 +17,7 @@ session_start();
 
 <body>
     <div class="container-fluid">
-            <?php include_once "./header.php"; ?>
+            <?php require_once("./header.php"); ?>
         <div class="row flex-xl-nowrap my-2">
             <?php include_once "./profileSidebar.php"; ?>
             <?php include_once "./profileMainSeciton.php" ?>
