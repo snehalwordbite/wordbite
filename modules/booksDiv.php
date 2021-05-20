@@ -10,6 +10,6 @@
         <h2><a href="#" class="btn btn-link">View More</a></h2>
     </div>
 </div>
-<div class="d-flex flex-row mx-2 my-2 d-flex-">
+<div class="d-flex flex-row mx-2 my-2">
     <?php require_once "./books.php" ?>
 </div>
