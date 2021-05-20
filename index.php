@@ -57,6 +57,8 @@ if($action=='home'){
             header("Location:./modules/profile.php");
         }else{
             echo '<script>alert("User not exists!");</script>';
+            include("./modules/login.php");
+            // header("Location:./modules/login.php");
         }
     }
 }

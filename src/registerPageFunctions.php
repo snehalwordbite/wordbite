@@ -40,6 +40,7 @@ function registerUser($email,$firstName,$lastName,$password,$dateOfBirth,$gender
         // echo '<script>alert("Registration Successful!");</script>';
         session_start();
         $_SESSION['username'] = $uniqueName;
+        $_SESSION['fullname'] = $firstName+' '+$lastName;
         $_SESSION['isloggedIn'] = true;
         header("Location:../modules/profile.php");
     }catch(Exception $e){

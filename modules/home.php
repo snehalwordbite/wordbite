@@ -15,12 +15,9 @@
 
    <?php
     include_once('./header.php');
-    ?>
-   <div class="container">
-   <?php
     include_once('./carosoul.php');
     ?>
-   </div>
+   
 
 
    </div>

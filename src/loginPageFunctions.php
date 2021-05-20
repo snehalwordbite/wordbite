@@ -8,6 +8,13 @@ function loginUser($username,$passwordHash){
         $conn=db();
         $rowCount = $conn->query($query)->rowCount();
         if($rowCount==1){
+            // try{
+            //     $query = "SELECT email FROM wb_customers_details WHERE uniqueName=$username";
+            //     $rs = $conn->exec($query);
+            //     echo $rs->fetch();
+            // }catch(Exception $e){
+            //     echo $e->getMessage();
+            // }
             return true;
         }else{
             return false;

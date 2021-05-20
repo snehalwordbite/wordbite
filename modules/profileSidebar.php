@@ -2,11 +2,9 @@
         <?php
         require('./profileCard.php');
         ?>
-        <div class="collapse d-md-block row" id="bd-docs-nav">
-            <nav class="bd-links" aria-label="Main navigation">
+        <div id="list-example" class="list-group my-3 justify-content-center">
                 <?php
             require('./profileSideBarLinks.php');
         ?>
-            </nav>
         </div>
     </div>

@@ -9,6 +9,7 @@
         <h5 class="card-title">
             <?php echo $_SESSION['username']; ?>
         </h5>
+        
         <div class="d-flex justify-content-center">
             <button class="btn bd-search-docs-toggle d-md-none p-0 ml-3 collapsed" type="button" data-toggle="collapse"
                 data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false"
