@@ -17,9 +17,11 @@ session_start();
 
 <body>
     <div class="container-fluid">
-        <?php include_once "./header.php"; ?>
-        <?php include_once "./profileSidebar.php"; ?>
-
+            <?php include_once "./header.php"; ?>
+        <div class="row flex-xl-nowrap my-2">
+            <?php include_once "./profileSidebar.php"; ?>
+            <?php include_once "./profileMainSeciton.php" ?>
+        </div>
     </div>
 
     <script src="../js/jquery-3.5.1.slim.min.js"></script>
