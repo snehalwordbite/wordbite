@@ -32,6 +32,7 @@
                   </div>
                   <small id="loginHelpBlock" class="form-text text-muted">
                     <label for="SignUpAccount">Don't have a account? <a href="./modules/signup.php" class="btn-link my-2">Sign UP</a></label>
+                    <label for="SignUpAccount">Don't you rememeber password? <a href="./forgetPassword.php" class="btn-link my-2">Forget Password</a></label>
                   </small>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
