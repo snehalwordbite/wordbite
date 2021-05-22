@@ -11,5 +11,5 @@
     </div>
 </div>
 <div class="d-flex flex-row mx-2 my-2 justify-content-center">
-    <?php require "./books.php" ?>
+<?php require "./booksCarosol.php" ?>
 </div>

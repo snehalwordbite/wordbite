@@ -1,8 +1,7 @@
-<main role="main" class="col-md-12 col-xl-8 py-md-3  bd-content shadow mb-2 bg-white rounded navbar-nav-scroll">
+<main role="main" class="col-md-9 col-xl-8 py-md-3  bd-content shadow mb-2 bg-white rounded navbar-nav-scroll">
     <!-- here put the foreach loop to make this working -->
-    <?php include_once "./booksDiv.php" ?>
-    <?php include_once "./blogsDiv.php" ?>
-    <!-- <div class="card text-center border-0">
+
+    <div class="card text-center border-0">
         <div class="card-body">
             <h5 class="card-title">Posts</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil molestias voluptatibus
@@ -30,6 +29,6 @@
             </div>
         </div>
         <span class="border broder-dark border-top-0 border-left-0 border-right-0"></span>
-    </div> -->
+    </div>
 
 </main>
