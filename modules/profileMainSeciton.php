@@ -1,4 +1,4 @@
-<main role="main" class="col-md-12 col-xl-8 py-md-3  bd-content shadow mb-2 bg-white rounded navbar-nav-scroll">
+<main role="main" class="col-md-8  col-xl-9 py-md-3  bd-content shadow mb-2 bg-white rounded navbar-nav-scroll">
     <!-- here put the foreach loop to make this working -->
     <?php include_once "./booksDiv.php" ?>
     <?php include_once "./blogsDiv.php" ?>
