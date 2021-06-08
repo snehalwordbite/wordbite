@@ -4,7 +4,7 @@ require_once("D:\Projects Made\Wrodbite Internship\wordbite\db\connect.php");
 require_once("./src/loginPageFunctions.php");
 require_once('./src/registerPageFunctions.php');
 
-if(isset($_POST['action'])){
+if(isset($_POST['action'])){  
     $action = $_POST['action'];
 }else if(isset($_GET['action'])){
     $action = $_POST['action'];
@@ -56,7 +56,7 @@ if($action=='home'){
             $_SESSION['isloggedIn']=true;
             header("Location:./modules/profile.php");
         }else{
-            echo '<script>alert("User not exists!");</script>';
+            echo '<script>alert("User does not exist!");</script>';
             include("./modules/login.php");
             // header("Location:./modules/login.php");
         }
